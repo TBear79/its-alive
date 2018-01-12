@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Testing endpoints 1",
+        "description": "Endpoints for testing purposes 1", 
+        "endpoints": [
+            {
+                "url": "http://its-alive.getsandbox.com/endpoint?unique=568274returnStatus=200",
+                "disabled": false,
+                "ignore": false
+            },
+            {
+                "url": "http://its-alive.getsandbox.com/endpoint?unique=96945&returnStatus=200",
+                "disabled": false,
+                "ignore": true
+            }   
+        ]
+    },
+    {
+        "name": "Testing endpoints 2",
+        "description": "Endpoints for testing purposes 2",
+        "endpoints": [
+            {
+                "url": "http://its-alive.getsandbox.com/endpoint?unique=23431&returnStatus=200",
+                "disabled": false,
+                "ignore": false,
+                "headers": [
+                    { "key": "content-type", "value": "application/json" }
+                ]
+            },
+            {
+                "url": "http://its-alive.getsandbox.com/endpoint?unique=589425&returnStatus=400",
+                "disabled": false,
+                "ignore": false
+            },
+            {
+                "url": "http://its-alive.getsandbox.com/endpoint?unique=96945&returnStatus=200",
+                "disabled": true,
+                "ignore": false
+            }  
+        ]
+    }
+]
