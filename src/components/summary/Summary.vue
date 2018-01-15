@@ -33,7 +33,7 @@ export default {
 .icon {
     font-size: 8em;
     float: right;
-    margin-right: 0.5em;
+    padding-right: 0.5em;
 }
 
 
@@ -51,7 +51,8 @@ export default {
     float:left;
     font-size: 2em;
     line-height: 1.5em;
-    width: 6em;
+    width: 7em;
+    padding-left: 1em;
 }
 
 #summary .icon.aok:before

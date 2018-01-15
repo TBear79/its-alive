@@ -20,3 +20,13 @@ export default {
     }
 }
 </script>
+<style scoped>
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-top: 1.5em;
+        margin-left: 0
+    }
+</style>

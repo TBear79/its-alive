@@ -4,12 +4,12 @@
         "description": "Endpoints for testing purposes 1", 
         "endpoints": [
             {
-                "url": "http://its-alive.getsandbox.com/endpoint?unique=568274returnStatus=200",
+                "url": "http://its-alive.getsandbox.com/endpoint1?unique=568274returnStatus=200",
                 "disabled": false,
                 "ignore": false
             },
             {
-                "url": "http://its-alive.getsandbox.com/endpoint?unique=96945&returnStatus=200",
+                "url": "http://its-alive.getsandbox.com/endpoint2?unique=96945&returnStatus=200",
                 "disabled": false,
                 "ignore": true
             }   
@@ -20,7 +20,7 @@
         "description": "Endpoints for testing purposes 2",
         "endpoints": [
             {
-                "url": "http://its-alive.getsandbox.com/endpoint?unique=23431&returnStatus=200",
+                "url": "http://its-alive.getsandbox.com/endpoint3?unique=23431&returnStatus=200",
                 "disabled": false,
                 "ignore": false,
                 "headers": [
@@ -28,12 +28,12 @@
                 ]
             },
             {
-                "url": "http://its-alive.getsandbox.com/endpoint?unique=589425&returnStatus=400",
+                "url": "http://its-alive.getsandbox.com/endpoint4?unique=589425&returnStatus=400",
                 "disabled": false,
                 "ignore": false
             },
             {
-                "url": "http://its-alive.getsandbox.com/endpoint?unique=96945&returnStatus=200",
+                "url": "http://its-alive.getsandbox.com/endpoint5?unique=96945&returnStatus=200",
                 "disabled": true,
                 "ignore": false
             }  
