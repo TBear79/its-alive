@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <summary-component></summary-component>
     <div class="separator"></div>
     <webservices-component></webservices-component>
@@ -25,5 +25,10 @@ export default {
 <style scoped>
 .separator {
   margin: 4em 0; 
+}
+
+.main {
+  margin: 0;
+  padding: 0;
 }
 </style>

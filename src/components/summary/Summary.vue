@@ -6,8 +6,10 @@
         </div>
         <div class="col-6">
             <div class="text">
-                <template v-if="aok">"All services are running. Life is good!"</template>
-                <template v-else>"PANIC!!!!"</template>
+                <span>
+                    <template v-if="aok">"All services are running. Life is good!"</template>
+                    <template v-else>"PANIC!!!!"</template>
+                </span>
             </div>
         </div>
     </div>
@@ -31,14 +33,24 @@ export default {
 .icon {
     font-size: 8em;
     float: right;
-    margin-right: 0.75em;
+    margin-right: 0.5em;
 }
 
-.text {
-    padding-top: 20px;
+
+.col-6 {
+    display: table;
+    height: 200px;
+}
+
+.icon, .text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.text span {
+    float:left;
     font-size: 2em;
     line-height: 1.5em;
-    text-align: left;
     width: 6em;
 }
 
@@ -50,7 +62,7 @@ export default {
 
 #summary .icon.fail:before
 {
-    content:'\2717';
+    content:'\2715';
     color:red;
 }
 </style>
