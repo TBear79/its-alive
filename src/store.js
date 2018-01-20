@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import WebServiceData from '../data/web-services'
 import uuidv4 from 'uuid/v4'
 import axios from 'axios'
+import config from './assets/static-config'
 
 Vue.use(Vuex)
 
@@ -62,6 +63,7 @@ const startListening = (context) => {
 
 const store = new Vuex.Store({
     state: {
+        text: {},
         webServices: []
     },
     mutations: {
@@ -72,6 +74,9 @@ const store = new Vuex.Store({
             let endpoint = state.webServices.reduce((acc, cur) => { return acc.concat(cur.endpoints) }, []).find(x => x.id === payload.endpointId)
             endpoint.status = payload.status
             endpoint.reason = payload.reason
+        },
+        addTexts (state, payload) {
+            state.text = { ...state.text, ...payload }
         }
     },
     actions: {
@@ -79,6 +84,7 @@ const store = new Vuex.Store({
             validateWebServiceData()
             const webservices = getMappedWebServiceData()
             context.commit('setWebServices', webservices)
+            context.commit('addTexts', config.texts)
             startListening(context)
         }
     }

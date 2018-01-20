@@ -1,19 +1,13 @@
 <template>
-  <div id="summary" class="container">
-      <div class="row">
-        <div class="col-6">
-            <div class="icon" v-bind:class="{ 'aok': aok, 'fail': !aok }"></div>
-        </div>
-        <div class="col-6">
-            <div class="text">
-                <span>
-                    <template v-if="aok">"All services are running. Life is good!"</template>
-                    <template v-else>"PANIC!!!!"</template>
-                </span>
-            </div>
+    <div id="summary">
+        <div class="content">
+            <span class="icon" v-bind:class="{ 'aok': aok, 'fail': !aok }"></span>
+            <span class="text">
+                <template v-if="aok">"{{SUMMARY_SUCCESS}}"</template>
+                <template v-else>"{{SUMMARY_FAIL}}"</template>
+            </span>
         </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -24,44 +18,46 @@ export default {
   computed: {
         aok: function () {
             return store.state.webServices.reduce((acc, cur) => { return acc.concat(cur.endpoints) }, []).findIndex(x => x.status === 'FAIL') === -1
+        },
+        SUMMARY_SUCCESS: function () {
+            return store.state.text.SUMMARY_SUCCESS
+        },
+        SUMMARY_FAIL: function () {
+            return store.state.text.SUMMARY_FAIL
         }
     }
 }
 </script>
 
 <style scoped>
-.icon {
-    font-size: 8em;
-    float: right;
-    padding-right: 0.5em;
-}
-
-
-.col-6 {
-    display: table;
-    height: 200px;
+.content 
+{
+    text-align: center;
 }
 
 .icon, .text {
-    display: table-cell;
     vertical-align: middle;
 }
 
-.text span {
-    float:left;
+.text {
     font-size: 2em;
     line-height: 1.5em;
-    width: 7em;
-    padding-left: 1em;
+    width: 8em;
+    display: inline-block;
 }
 
-#summary .icon.aok:before
+.icon {
+    font-size: 8em;
+    margin: auto auto;
+}
+
+.icon.aok:before
 {
     content:'\2713';
     color:green;
 }
 
-#summary .icon.fail:before
+ .icon.fail:before
 {
     content:'\2715';
     color:red;
