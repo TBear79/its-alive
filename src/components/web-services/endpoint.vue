@@ -1,10 +1,9 @@
 <template>
-    <div class="container endpoint">
-        <div class="row">
-            <div class="col-6 url">{{ endpoint.url }}</div>
-            <div class="col-6 status" v-bind:class="{ 'aok': endpoint.status == 'SUCCESS', 'fail': endpoint.status == 'FAIL', 'loading': endpoint.status == 'INIT' }"></div>
-        </div>
-    </div>
+    <li class="row endpoint" v-bind:class="{ 'aok': endpoint.status == 'SUCCESS', 'fail': endpoint.status == 'FAIL', 'loading': endpoint.status == 'INIT' }">
+        <div class="col-3 status hidden-medium-up" v-bind:class="{ 'aok': endpoint.status == 'SUCCESS', 'fail': endpoint.status == 'FAIL', 'loading': endpoint.status == 'INIT' }"></div>
+        <div class="col-9 url">{{ endpoint.url }}</div>
+        <div class="col-3 status hidden-sm" v-bind:class="{ 'aok': endpoint.status == 'SUCCESS', 'fail': endpoint.status == 'FAIL', 'loading': endpoint.status == 'INIT' }"></div>
+    </li>
 </template>
 <script>
 export default {
@@ -13,13 +12,26 @@ export default {
 }
 </script>
 <style scoped>
-.url {
-    text-align: right;
-    padding-right: 50px;
+.endpoint {
+    border-bottom: 1px solid gray;
+    padding: 1em 0;
+}
+
+.endpoint.aok {
+    color: green;
+}
+
+.endpoint.fail {
+    color: red;
+}
+
+.endpoint.loading {
+    color: darkgoldenrod;
 }
 
 .status {
-    text-align: left;
+    text-align: center;
+    font-size: 2em;
 }
 
 .status.aok:before
@@ -31,12 +43,18 @@ export default {
 .status.fail:before
 {
     content:'\2715';
-    color:red;
+    color:darkgoldenrod;
 }
 
 .status.loading:before
 {
     content:'\2743';
     color:darkgoldenrod;
+}
+
+@media only screen and (min-width: 45em) {
+    .endpoint {
+        line-height: 4em;
+    }
 }
 </style>

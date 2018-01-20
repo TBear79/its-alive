@@ -1,13 +1,9 @@
 <template>
-    <div class="container web-service">
-        <div class="row info">
-            <div class="col-6 name">{{ webService.name }}</div>
-            <div class="col-6 description">{{ webService.description }}</div>
-        </div>
-        <ul class="row endpoints">
-            <li v-for="endpoint in webService.endpoints" v-bind:key="endpoint.id">
-                <endpoint-component :endpoint="endpoint"></endpoint-component>
-            </li>
+    <div class="web-service">
+        <div class="name">{{ webService.name }}</div>
+        <div class="description">{{ webService.description }}</div>
+        <ul class="container endpoints">
+            <endpoint-component :endpoint="endpoint" v-for="endpoint in webService.endpoints" v-bind:key="endpoint.id"></endpoint-component>
         </ul>
     </div>
 </template>
@@ -22,22 +18,20 @@ export default {
 }
 </script>
 <style scoped>
-ul {
-    list-style: none;
-}
-
 .name {
-    text-align: right;
     font-size: 1.5em;
+    line-height: 2em;
     padding-right: 50px;
-}
-
-.description {
-    padding: 0.5em;
-    text-align: left;
+    font-weight: bold;
 }
 
 .info {
     margin-bottom: 1.5em;
+}
+
+.endpoints {
+    margin-top: 1.5em;
+    padding: 0;
+    list-style: none;
 }
 </style>

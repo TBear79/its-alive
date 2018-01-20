@@ -29,7 +29,7 @@ export default {
 
 #main {
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 1em 0;
   max-width: 1024px;
 }
 </style>
