@@ -1,12 +1,10 @@
 <template>
     <div id="summary">
-        <div class="content">
             <span class="icon" v-bind:class="{ 'aok': aok, 'fail': !aok }"></span>
             <span class="text">
                 <template v-if="aok">"{{SUMMARY_SUCCESS}}"</template>
                 <template v-else>"{{SUMMARY_FAIL}}"</template>
             </span>
-        </div>
     </div>
 </template>
 
@@ -30,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-.content 
+#summary 
 {
     text-align: center;
 }

@@ -1,6 +1,9 @@
 <template>
   <div id="main">
     <summary-component></summary-component>
+    <div id="details-link">
+      <a href="#" target="blank">View details</a>
+    </div>
     <div class="separator"></div>
     <webservices-component></webservices-component>
   </div>
@@ -31,5 +34,26 @@ export default {
   margin: 0 auto;
   padding: 0 0 1em 0;
   max-width: 1024px;
+}
+
+#details-link {
+  text-align: center;
+}
+
+#details-link a {
+  color: lightgray;
+}
+
+@media only screen and (min-height: 25em) {
+    #details-link {
+      display: none;
+    }
+}
+</style>
+<style>
+@media only screen and (max-height: 25em) {
+  #web-services {
+        display: none;
+  }  
 }
 </style>
