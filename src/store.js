@@ -35,7 +35,7 @@ const getMappedWebServiceData = (context) => {
 }
 
 const sendRequest = (context, endpoint) => {
-    axios.get(endpoint.url)
+    axios.get(endpoint.url, { headers: endpoint.headers })
         .then(function (response) {
             if (response.status === 200) {
                 context.commit('setStatus', { endpointId: endpoint.id, status: 'SUCCESS' })
